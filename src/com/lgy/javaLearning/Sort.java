@@ -10,11 +10,11 @@ import java.util.Random;
  */
 public class Sort {
     //要生成多少个随机数
-    int num = 1000;
+    public int num = 1000;
     int[] testArray = new int[num];
     Random rd = new Random();
 
-    public void ProduceNum() {
+    public int[] ProduceNum() {
         //取出20000以内的1000个随机数
         for (int i = 0; i < this.num; i++) {
             int j = (int) (rd.nextInt(20000));
@@ -26,6 +26,7 @@ public class Sort {
         for(int i=0;i<this.num;i++){
                 System.out.println(this.testArray[i]);
         }
+        return testArray;
      }
 
 
