@@ -14,27 +14,23 @@ public class Sort {
     int[] testArray = new int[num];
     Random rd = new Random();
 
-    //产生随机数组
     public void ProduceNum() {
-        for (int i = 0; i < num; i++) {
+        //取出20000以内的1000个随机数
+        for (int i = 0; i < this.num; i++) {
             int j = (int) (rd.nextInt(20000));
-            testArray[i] = j;
-
+            this.testArray[i] = j;
         }
-    }
+        //对取出的1000个数字进行排序
+        Arrays.sort(this.testArray);
+        //依次遍历出所有的数字
+        for(int i=0;i<this.num;i++){
+                System.out.println(this.testArray[i]);
+        }
+     }
 
-    /**
-     * @param args
-     */
+
     public static void main(String[] args) {
         Sort sort = new Sort();
-        int n = sort.num;
         sort.ProduceNum();
-        Arrays.sort(sort.testArray);
-
-        for (int i = 0; i < n; i++) {
-            System.out.println(sort.testArray[i]);
-        }
-
     }
 }
